@@ -24,18 +24,18 @@ header > * {
 }
 
 header .profile {
-  width: 200px;
-  height: 200px;
+  max-width: 200px;
+  max-height: 200px;
 
   border: 2px solid #FFF;
-  border-radius: 100%;
+  border-radius: 100px;
   overflow: hidden;
 
   display: flex;
 }
 
 header .profile img {
-  width: 200px;
+  width: 100%;
   align-self: center;
 }
 
@@ -79,4 +79,22 @@ main .profile-github a:hover {
 
 main .profile-github a img {
   width: 26px;
+}
+
+
+@media (max-width: 768px) {
+  header {
+    width: 100%;
+    min-height: 400px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #000;
+    color: #FFF;
+
+    text-align: center;
+  }
 }
