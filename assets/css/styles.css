@@ -1,10 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: Roboto, Oxygen, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  background-color: #fafafa;
 }
 
 header {
@@ -16,7 +23,7 @@ header {
   justify-content: center;
 
   background-color: #000;
-  color: #FFF;
+  color: #fff;
 }
 
 header > * {
@@ -27,7 +34,7 @@ header .profile {
   max-width: 200px;
   max-height: 200px;
 
-  border: 2px solid #FFF;
+  border: 2px solid #fff;
   border-radius: 100px;
   overflow: hidden;
 
@@ -45,42 +52,142 @@ header .title > * {
 
 main {
   width: 100%;
-  padding-top: 20px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 main .profile-github {
+  width: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+
+  padding: 20px;
+  background-color: #eee;
+  border-bottom: 1px solid #ddd;
 }
 
 main .profile-github a {
+  min-width: 200px;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-  margin: 20px;
+  margin: 10px;
   padding: 10px;
   border-radius: 8px;
-  color: #444;
+  background-color: #fff;
+  color: #222;
+  border: 1px solid #ddd;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
+  font-weight: bold;
 
-  transition: background-color 0.4s;
+  transition: 0.2s filter;
 }
 
 main .profile-github a:hover {
-  background-color: #CCC;
-  color: #000;
+  filter: invert();
 }
 
 main .profile-github a img {
   width: 26px;
 }
 
+main .portfolio {
+  width: 100%;
+  max-width: 980px;
+  padding: 20px;
+}
+
+main .portfolio h1 {
+  width: 100%;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+main .portfolio .card-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+main .portfolio .card {
+  width: 100%;
+  max-width: 400px;
+  min-height: 300px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 2px 2px 4px #ccc;
+
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+
+  background-color: #eee;
+  border: 1px solid #ddd;
+}
+
+main .portfolio .card .card-header {
+  position: relative;
+}
+
+main .portfolio .card .card-header img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main .portfolio .card .card-header h3 {
+  width: 100%;
+  padding: 20px 10px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+
+main .portfolio .card .card-footer {
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+main .portfolio .card .card-footer a {
+  width: 100%;
+  max-width: 250px;
+  text-decoration: none;
+  padding: 5px 10px;
+
+  border-radius: 4px;
+  background-color: #fff;
+  color: #222;
+  border: 1px solid #ddd;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
+
+  transition: 0.3s filter;
+}
+
+main .portfolio .card .card-footer a:hover {
+  filter: invert();
+}
 
 @media (max-width: 768px) {
   header {
@@ -93,8 +200,30 @@ main .profile-github a img {
     justify-content: center;
 
     background-color: #000;
-    color: #FFF;
+    color: #fff;
 
     text-align: center;
+  }
+
+  main .profile-github a {
+    width: 100%;
+  }
+
+  main .portfolio .card-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  main .portfolio .card-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
 }
