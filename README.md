@@ -1,2 +1,7 @@
 # marcosferreira.github.io
-Software Developer
+JavaScript Developer
+
+## Skills
+- React
+- ReactNativ
+- NodeJS
