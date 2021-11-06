@@ -1,7 +1,2 @@
 # marcosferreira.github.io
-JavaScript Developer
-
-## Skills
-- React
-- ReactNativ
-- NodeJS
+Cross Plataform Developer (Flutter)
