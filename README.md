@@ -1,2 +1,2 @@
 # marcosferreira.github.io
-Cross Plataform Developer (Flutter)
+Software Developer - JavaScript | React | ReactNative | NodeJS | Python | Django | Flutter | Firebase
