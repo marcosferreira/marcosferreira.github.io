@@ -1,2 +1,2 @@
 # marcosferreira.github.io
-Software Developer - JavaScript
+Software Developer - JavaScript | React | NodeJS
