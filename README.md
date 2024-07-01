@@ -1,2 +1,2 @@
 # marcosferreira.github.io
-Software Developer - JavaScript | PHP | Python | Java
+Software Developer | Django - Laravel - React - Flutter | Full Stack
