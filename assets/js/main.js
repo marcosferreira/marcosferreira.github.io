@@ -82,3 +82,36 @@ document.addEventListener('DOMContentLoaded', function() {
   initAnimations();
   setupNavbarMobile();
 });
+
+/**
+ * Função para enviar mensagem via WhatsApp
+ * @param {Event} event - Evento de submit do formulário
+ * @returns {boolean} - Retorna false para evitar o comportamento padrão do formulário
+ */
+function sendWhatsApp(event) {
+  // Previne o comportamento padrão do formulário
+  event.preventDefault();
+  
+  // Obter os valores dos campos
+  const nome = document.getElementById('nome').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const assunto = document.getElementById('assunto').value.trim();
+  const mensagem = document.getElementById('mensagem').value.trim();
+  
+  // Número de telefone para envio (adicione seu número aqui com código do país)
+  const telefone = "5583981074503"; // Formato: DDI + DDD + número (sem espaços ou caracteres especiais)
+  
+  // Formatar a mensagem para o WhatsApp
+  const texto = `*Contato via Portfolio*%0A%0A*Nome:* ${encodeURIComponent(nome)}%0A*E-mail:* ${encodeURIComponent(email)}%0A*Assunto:* ${encodeURIComponent(assunto)}%0A%0A*Mensagem:*%0A${encodeURIComponent(mensagem)}`;
+  
+  // Criar a URL do WhatsApp
+  const whatsappURL = `https://wa.me/${telefone}?text=${texto}`;
+  
+  // Abrir o WhatsApp em uma nova aba
+  window.open(whatsappURL, '_blank');
+  
+  // Limpar o formulário após o envio
+  document.getElementById('whatsappForm').reset();
+  
+  return false;
+}
