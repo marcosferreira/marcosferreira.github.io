@@ -44,10 +44,23 @@ header::before {
   background-size: cover;
   background-position: bottom;
   opacity: 0.3;
+  z-index: 1;
 }
 
 header > * {
   margin: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .btn {
+  position: relative;
+  z-index: 3;
 }
 
 header .profile {
