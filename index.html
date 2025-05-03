@@ -8,90 +8,397 @@
 
   <title>Marcos Ferreira - Fullstack Developer</title>
 
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
   <link rel="shortcut icon" href="https://cdn.afterdawn.fi/v3/news/original/github-logo.png" type="image/x-icon">
   <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
 <body>
-  <header>
-    <div class="profile">
-      <img src="https://github.com/marcosferreira.png" alt="Marcos Ferreira">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Marcos Ferreira</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#sobre">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#portfolio">Portfólio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contato">Contato</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <div class="title">
-      <h1>Marcos Ferreira</h1>
-      <h3>Fullstack Developer</h3>
-    </div>
-  </header>
-
-  <main>
-    <div class="profile-github">
-      <a href="https://github.com/marcosferreira" target="_blank">
-        <img src="assets/img/github-logo.png" alt="https://github.com/marcosferreira">/marcosferreira
-      </a>
-    </div>
-
-    <div class="portfolio">
-      <h1>Portifólio</h1>
-
-      <div class="card-group">
-        <div class="card">
-          <div class="card-header">
-            <img src="assets/img/projects-img/netflix-clone.png" alt="netflix-clone">
-            <h3>Netflix Clone</h3>
-          </div>
-          <div class="card-footer">
-            <a href="https://marcosferreira.github.io/netflix-web" target="_blank">Demonstração</a>
-            <a href="https://github.com/marcosferreira/netflix-web" target="_blank">Link do projeto</a>
+  <!-- Header / Hero Section -->
+  <header id="home" class="bg-dark text-white text-center py-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-4 mb-4 mb-md-0">
+          <div class="profile rounded-circle overflow-hidden mx-auto" style="width: 200px; height: 200px; border: 3px solid white;">
+            <img src="https://github.com/marcosferreira.png" alt="Marcos Ferreira" class="img-fluid">
           </div>
         </div>
-
-        <div class="card">
-          <div class="card-header">
-            <img src="assets/img/projects-img/nnlanches-web.png" alt="netflix-clone">
-            <h3>NNLanches</h3>
-          </div>
-          <div class="card-footer">
-            <a href="https://marcosferreira.github.io/nnlanches-web" target="_blank">Demonstração</a>
-            <a href="https://github.com/marcosferreira/nnlanches-web" target="_blank">Link do projeto</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <img src="assets/img/projects-img/site-pmdonaines.png" alt="site-prefeitura-dona-ines">
-            <h3>Prefeitura de Dona Inês</h3>
-          </div>
-          <div class="card-footer">
-            <a href="http://pmdonaines.pb.gov.br" target="_blank">Demonstração</a>
-            <a href="#" target="_blank">Link do projeto</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <img src="assets/img/projects-img/site-coegemaspb.png" alt="site-coegemaspb">
-            <h3>Coegemas PB</h3>
-          </div>
-          <div class="card-footer">
-            <a href="http://coegemaspb.com.br" target="_blank">Demonstração</a>
-            <a href="#" target="_blank">Link do projeto</a>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <img src="assets/img/projects-img/site-congesp.png" alt="site-prefeitura-dona-ines">
-            <h3>Congesp</h3>
-          </div>
-          <div class="card-footer">
-            <a href="https://congesp.com.br" target="_blank">Demonstração</a>
-            <a href="#" target="_blank">Link do projeto</a>
+        <div class="col-md-8 d-flex align-items-center">
+          <div class="text-md-start text-center">
+            <h1 class="display-4 fw-bold">Marcos Ferreira</h1>
+            <h3 class="lead fs-3 fw-light mb-4">Fullstack Developer</h3>
+            <div class="d-flex gap-3 justify-content-md-start justify-content-center">
+              <a href="https://github.com/marcosferreira" target="_blank" class="btn btn-outline-light">
+                <i class="fab fa-github me-2"></i>GitHub
+              </a>
+              <a href="#" class="btn btn-primary">
+                <i class="fas fa-download me-2"></i>Download CV
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </header>
+
+  <!-- Sobre Section -->
+  <section id="sobre" class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="mb-4">Sobre Mim</h2>
+          <p class="lead">Sou um desenvolvedor de software com experiência em desenvolvimento web e aplicativos.</p>
+          <p>Com habilidades em Python, Django, Flask, PHP, JavaScript, TypeScript, HTML, CSS, React, Node.js, MongoDB, PostgreSQL, MySQL, Git, Docker, Linux, AWS, Azure e GCP, busco criar soluções eficientes e intuitivas.</p>
+          <div class="mt-4">
+            <h4 class="mb-3">Minhas Habilidades</h4>
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+              <span class="badge bg-primary p-2">Python</span>
+              <span class="badge bg-primary p-2">Django</span>
+              <span class="badge bg-primary p-2">Flask</span>
+              <span class="badge bg-primary p-2">PHP</span>
+              <span class="badge bg-primary p-2">JavaScript</span>
+              <span class="badge bg-primary p-2">TypeScript</span>
+              <span class="badge bg-primary p-2">HTML</span>
+              <span class="badge bg-primary p-2">CSS</span>
+              <span class="badge bg-primary p-2">React</span>
+              <span class="badge bg-primary p-2">Node.js</span>
+              <span class="badge bg-primary p-2">MongoDB</span>
+              <span class="badge bg-primary p-2">PostgreSQL</span>
+              <span class="badge bg-primary p-2">MySQL</span>
+              <span class="badge bg-primary p-2">Git</span>
+              <span class="badge bg-primary p-2">Docker</span>
+              <span class="badge bg-primary p-2">Linux</span>
+              <span class="badge bg-primary p-2">AWS</span>
+              <span class="badge bg-primary p-2">Azure</span>
+              <span class="badge bg-primary p-2">GCP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-5">Meu Portfólio</h2>
+        
+        <div class="row g-4">
+          <!-- Netflix Clone -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+              <div class="position-relative">
+                <img src="assets/img/projects-img/netflix-clone.png" class="card-img-top" alt="Netflix Clone">
+                <div class="position-absolute bottom-0 w-100 py-3 px-3" style="background: rgba(0,0,0,0.7);">
+                  <h5 class="text-white m-0">Netflix Clone</h5>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between">
+                <p class="card-text">Clone da interface do Netflix desenvolvido com tecnologias web modernas.</p>
+                <div class="d-flex gap-2 mt-3">
+                  <a href="https://marcosferreira.github.io/netflix-web" target="_blank" class="btn btn-primary flex-grow-1">
+                    <i class="fas fa-desktop me-2"></i>Demo
+                  </a>
+                  <a href="https://github.com/marcosferreira/netflix-web" target="_blank" class="btn btn-outline-dark flex-grow-1">
+                    <i class="fab fa-github me-2"></i>Código
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bg-white">
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge bg-secondary">HTML</span>
+                  <span class="badge bg-secondary">CSS</span>
+                  <span class="badge bg-secondary">JavaScript</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- NNLanches -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+              <div class="position-relative">
+                <img src="assets/img/projects-img/nnlanches-web.png" class="card-img-top" alt="NNLanches">
+                <div class="position-absolute bottom-0 w-100 py-3 px-3" style="background: rgba(0,0,0,0.7);">
+                  <h5 class="text-white m-0">NNLanches</h5>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between">
+                <p class="card-text">Sistema web para lanchonete com recursos de pedidos online.</p>
+                <div class="d-flex gap-2 mt-3">
+                  <a href="https://marcosferreira.github.io/nnlanches-web" target="_blank" class="btn btn-primary flex-grow-1">
+                    <i class="fas fa-desktop me-2"></i>Demo
+                  </a>
+                  <a href="https://github.com/marcosferreira/nnlanches-web" target="_blank" class="btn btn-outline-dark flex-grow-1">
+                    <i class="fab fa-github me-2"></i>Código
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bg-white">
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge bg-secondary">React</span>
+                  <span class="badge bg-secondary">Node.js</span>
+                  <span class="badge bg-secondary">MongoDB</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Prefeitura de Dona Inês -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+              <div class="position-relative">
+                <img src="assets/img/projects-img/site-pmdonaines.png" class="card-img-top" alt="Prefeitura de Dona Inês">
+                <div class="position-absolute bottom-0 w-100 py-3 px-3" style="background: rgba(0,0,0,0.7);">
+                  <h5 class="text-white m-0">Prefeitura de Dona Inês</h5>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between">
+                <p class="card-text">Site institucional para a Prefeitura Municipal de Dona Inês (PB).</p>
+                <div class="d-flex gap-2 mt-3">
+                  <a href="http://pmdonaines.pb.gov.br" target="_blank" class="btn btn-primary flex-grow-1">
+                    <i class="fas fa-desktop me-2"></i>Demo
+                  </a>
+                  <a href="#" target="_blank" class="btn btn-outline-dark flex-grow-1 disabled">
+                    <i class="fab fa-github me-2"></i>Privado
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bg-white">
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge bg-secondary">WordPress</span>
+                  <span class="badge bg-secondary">PHP</span>
+                  <span class="badge bg-secondary">MySQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Coegemas PB -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+              <div class="position-relative">
+                <img src="assets/img/projects-img/site-coegemaspb.png" class="card-img-top" alt="Coegemas PB">
+                <div class="position-absolute bottom-0 w-100 py-3 px-3" style="background: rgba(0,0,0,0.7);">
+                  <h5 class="text-white m-0">Coegemas PB</h5>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between">
+                <p class="card-text">Portal para o Colegiado Estadual de Gestores Municipais de Assistência Social da Paraíba.</p>
+                <div class="d-flex gap-2 mt-3">
+                  <a href="http://coegemaspb.com.br" target="_blank" class="btn btn-primary flex-grow-1">
+                    <i class="fas fa-desktop me-2"></i>Demo
+                  </a>
+                  <a href="#" target="_blank" class="btn btn-outline-dark flex-grow-1 disabled">
+                    <i class="fab fa-github me-2"></i>Privado
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bg-white">
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge bg-secondary">WordPress</span>
+                  <span class="badge bg-secondary">PHP</span>
+                  <span class="badge bg-secondary">MySQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Congesp -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm">
+              <div class="position-relative">
+                <img src="assets/img/projects-img/site-congesp.png" class="card-img-top" alt="Congesp">
+                <div class="position-absolute bottom-0 w-100 py-3 px-3" style="background: rgba(0,0,0,0.7);">
+                  <h5 class="text-white m-0">Congesp</h5>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between">
+                <p class="card-text">Portal para o Congresso de Gestão Pública, com sistema de inscrições e certificados.</p>
+                <div class="d-flex gap-2 mt-3">
+                  <a href="https://congesp.com.br" target="_blank" class="btn btn-primary flex-grow-1">
+                    <i class="fas fa-desktop me-2"></i>Demo
+                  </a>
+                  <a href="#" target="_blank" class="btn btn-outline-dark flex-grow-1 disabled">
+                    <i class="fab fa-github me-2"></i>Privado
+                  </a>
+                </div>
+              </div>
+              <div class="card-footer bg-white">
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge bg-secondary">Django</span>
+                  <span class="badge bg-secondary">Python</span>
+                  <span class="badge bg-secondary">PostgreSQL</span>
+                  <span class="badge bg-secondary">Docker</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Novo Projeto Card -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-dashed" style="border-style: dashed; border-width: 2px;">
+              <div class="card-body d-flex flex-column align-items-center justify-content-center text-center p-5">
+                <i class="fas fa-plus-circle display-1 text-muted mb-3"></i>
+                <h5>Você tem um projeto em mente?</h5>
+                <p class="mb-3">Vamos transformar sua ideia em realidade</p>
+                <a href="#contato" class="btn btn-outline-primary mt-2">Entre em contato</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Contato Section -->
+    <section id="contato" class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-5">Entre em Contato</h2>
+        
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="card shadow-sm">
+              <div class="card-body p-4">
+                <form>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label for="nome" class="form-label">Nome</label>
+                      <input type="text" class="form-control" id="nome" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="email" class="form-label">E-mail</label>
+                      <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="col-12">
+                      <label for="assunto" class="form-label">Assunto</label>
+                      <input type="text" class="form-control" id="assunto" required>
+                    </div>
+                    <div class="col-12">
+                      <label for="mensagem" class="form-label">Mensagem</label>
+                      <textarea class="form-control" id="mensagem" rows="4" required></textarea>
+                    </div>
+                    <div class="col-12 mt-4">
+                      <button type="submit" class="btn btn-primary w-100">Enviar Mensagem</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            
+            <div class="row mt-4 g-3 text-center">
+              <div class="col-md-4">
+                <div class="card h-100 shadow-sm py-4">
+                  <div class="card-body">
+                    <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+                    <h5>E-mail</h5>
+                    <p class="mb-0"><a href="mailto:marcosferreira.contato@gmail.com" class="text-decoration-none">marcosferreira.contato@gmail.com</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card h-100 shadow-sm py-4">
+                  <div class="card-body">
+                    <i class="fas fa-phone fa-2x text-primary mb-3"></i>
+                    <h5>Telefone</h5>
+                    <p class="mb-0"><a href="tel:+5583981074503" class="text-decoration-none">(83) 98107-4503</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card h-100 shadow-sm py-4">
+                  <div class="card-body">
+                    <i class="fas fa-map-marker-alt fa-2x text-primary mb-3"></i>
+                    <h5>Localização</h5>
+                    <p class="mb-0">João Pessoa, PB - Brasil</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <!-- Botão Voltar ao Topo -->
+  <a href="#home" class="scroll-top" id="scrollTop">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mb-4 mb-md-0">
+          <h5 class="mb-3">Marcos Ferreira</h5>
+          <p class="mb-3">Fullstack Developer apaixonado por criar soluções digitais inovadoras e funcionais.</p>
+          <div class="d-flex gap-3">
+            <a href="https://github.com/marcosferreira" target="_blank" class="text-white">
+              <i class="fab fa-github fa-lg"></i>
+            </a>
+            <a href="#" target="_blank" class="text-white">
+              <i class="fab fa-linkedin fa-lg"></i>
+            </a>
+            <a href="#" target="_blank" class="text-white">
+              <i class="fab fa-twitter fa-lg"></i>
+            </a>
+            <a href="#" target="_blank" class="text-white">
+              <i class="fab fa-instagram fa-lg"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <h5 class="mb-3">Links Rápidos</h5>
+          <ul class="list-unstyled">
+            <li><a href="#home" class="text-white text-decoration-none">Home</a></li>
+            <li><a href="#sobre" class="text-white text-decoration-none">Sobre</a></li>
+            <li><a href="#portfolio" class="text-white text-decoration-none">Portfólio</a></li>
+            <li><a href="#contato" class="text-white text-decoration-none">Contato</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <p class="mb-0">&copy; 2025 Marcos Ferreira. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle com Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JavaScript personalizado -->
+  <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
