@@ -20,20 +20,62 @@
 <body>
   <!-- Navbar -->
   <header class="Header position-sticky top-0">
-    <div class="container-lg">
-      <!-- <div class="Header-item">
-        <a href="#" class="Header-link f4 d-flex flex-items-center">
+    <div class="container-lg d-flex flex-items-center flex-justify-between gap-3">
+      <!-- Logo/Brand -->
+      <div class="Header-item flex-1">
+        <a href="#home" class="Header-link f4 d-flex flex-items-center" aria-label="Voltar ao topo">
+          <img src="https://github.com/marcosferreira.png" alt="" class="avatar avatar-small mr-2" style="width: 32px; height: 32px;">
           <span class="text-bold">Marcos Ferreira</span>
         </a>
-      </div> -->
-      <div class="Header-item">
-        <nav class="UnderlineNav">
+      </div>
+      
+      <!-- Navigation -->
+      <div class="Header-item Header-item--full flex-justify-center d-none d-lg-flex">
+        <nav class="UnderlineNav" aria-label="Navegação principal">
           <div class="UnderlineNav-body">
-            <a class="UnderlineNav-item" aria-current="page" href="#home">Home</a>
-            <a class="UnderlineNav-item" href="#sobre">Sobre</a>
-            <a class="UnderlineNav-item" href="#stats">Estatísticas</a>
-            <a class="UnderlineNav-item" href="#portfolio">Portfólio</a>
-            <a class="UnderlineNav-item" href="#contato">Contato</a>
+            <a class="UnderlineNav-item" href="#home" data-nav-section="home">Home</a>
+            <span class="nav-separator"></span>
+            <a class="UnderlineNav-item" href="#sobre" data-nav-section="sobre">Sobre</a>
+            <span class="nav-separator"></span>
+            <a class="UnderlineNav-item" href="#stats" data-nav-section="stats">Estatísticas</a>
+            <span class="nav-separator"></span>
+            <a class="UnderlineNav-item" href="#portfolio" data-nav-section="portfolio">Portfólio</a>
+            <span class="nav-separator"></span>
+            <a class="UnderlineNav-item" href="#contato" data-nav-section="contato">Contato</a>
+          </div>
+        </nav>
+      </div>
+      
+      <!-- CTA Button -->
+      <div class="Header-item d-none d-md-flex">
+        <a href="#contato" class="btn btn-primary btn-sm" aria-label="Iniciar projeto">
+          <i class="bi bi-envelope mr-2" aria-hidden="true"></i>
+          <span class="d-none d-lg-inline">Iniciar Projeto</span>
+          <span class="d-inline d-lg-none">Contato</span>
+        </a>
+      </div>
+      
+      <!-- Mobile Menu Toggle -->
+      <div class="Header-item d-lg-none">
+        <button class="btn" id="mobileMenuToggle" aria-label="Abrir menu" aria-expanded="false">
+          <i class="bi bi-list" style="font-size: 1.5rem;" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu d-lg-none" id="mobileMenu" hidden>
+      <div class="container-lg">
+        <nav class="py-3" aria-label="Navegação mobile">
+          <a class="mobile-menu-item d-block py-2" href="#home" data-nav-section="home">Home</a>
+          <a class="mobile-menu-item d-block py-2" href="#sobre" data-nav-section="sobre">Sobre</a>
+          <a class="mobile-menu-item d-block py-2" href="#stats" data-nav-section="stats">Estatísticas</a>
+          <a class="mobile-menu-item d-block py-2" href="#portfolio" data-nav-section="portfolio">Portfólio</a>
+          <a class="mobile-menu-item d-block py-2" href="#contato" data-nav-section="contato">Contato</a>
+          <div class="border-top pt-3 m-2">
+            <a href="#contato" class="btn btn-primary width-full">
+              <i class="bi bi-envelope mr-2" aria-hidden="true"></i>Iniciar Projeto
+            </a>
           </div>
         </nav>
       </div>
@@ -306,6 +348,28 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Outros Projetos do GitHub -->
+    <section id="github-projects" class="py-8">
+      <div class="container-lg px-3 px-md-6">
+        <div class="text-center mb-5">
+          <h2 class="h2-mktg mb-3">Outros Projetos</h2>
+          <p class="f4 color-fg-muted">Repositórios públicos do meu GitHub</p>
+        </div>
+        
+        <div class="d-flex flex-wrap" id="github-repos-container">
+          <!-- Os repositórios serão carregados dinamicamente aqui -->
+        </div>
+        
+        <div class="text-center mt-5">
+          <a href="https://github.com/marcosferreira?tab=repositories" target="_blank" 
+             class="btn btn-large" rel="noopener noreferrer">
+            <i class="bi bi-github mr-2"></i>Ver todos os repositórios no GitHub
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- Contato Section -->
@@ -425,6 +489,7 @@
 
   <!-- JavaScript personalizado -->
   <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/github-repos.js"></script>
 </body>
 
 </html>

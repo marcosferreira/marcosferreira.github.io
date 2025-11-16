@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const animateElements = document.querySelectorAll('section, .Box');
   const navLinks = document.querySelectorAll('.UnderlineNav-item');
   const header = document.querySelector('.Header');
+  const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
   
   // Contador de animação para delays escalonados
   let animationDelay = 0;
@@ -24,14 +26,45 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Efeito de header ao rolar
   function handleHeaderScroll() {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 10) {
       if (header) {
-        header.style.boxShadow = '0 8px 16px rgba(140, 149, 159, 0.15)';
+        header.classList.add('scrolled');
       }
     } else {
       if (header) {
-        header.style.boxShadow = '0 1px 0 rgba(27, 31, 36, 0.04)';
+        header.classList.remove('scrolled');
       }
+    }
+  }
+  
+  // Mobile menu toggle
+  function setupMobileMenu() {
+    if (mobileMenuToggle && mobileMenu) {
+      mobileMenuToggle.addEventListener('click', () => {
+        const isExpanded = mobileMenuToggle.getAttribute('aria-expanded') === 'true';
+        
+        mobileMenuToggle.setAttribute('aria-expanded', !isExpanded);
+        mobileMenu.hidden = isExpanded;
+        
+        // Change icon
+        const icon = mobileMenuToggle.querySelector('i');
+        if (icon) {
+          icon.className = isExpanded ? 'bi bi-list' : 'bi bi-x';
+        }
+      });
+      
+      // Close mobile menu when clicking on a link
+      const mobileMenuItems = mobileMenu.querySelectorAll('.mobile-menu-item');
+      mobileMenuItems.forEach(item => {
+        item.addEventListener('click', () => {
+          mobileMenu.hidden = true;
+          mobileMenuToggle.setAttribute('aria-expanded', 'false');
+          const icon = mobileMenuToggle.querySelector('i');
+          if (icon) {
+            icon.className = 'bi bi-list';
+          }
+        });
+      });
     }
   }
 
@@ -59,17 +92,21 @@ document.addEventListener('DOMContentLoaded', function() {
   // Atualizar nav-link ativo ao rolar
   function updateActiveNavLink() {
     const scrollPosition = window.scrollY + 150;
+    const navItems = document.querySelectorAll('[data-nav-section]');
     
-    document.querySelectorAll('section').forEach(section => {
+    document.querySelectorAll('section, div[id="home"]').forEach(section => {
       const sectionTop = section.offsetTop;
       const sectionBottom = sectionTop + section.offsetHeight;
       const sectionId = section.getAttribute('id');
       
       if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-        navLinks.forEach(link => {
-          link.removeAttribute('aria-current');
-          if (link.getAttribute('href') === '#' + sectionId) {
-            link.setAttribute('aria-current', 'page');
+        navItems.forEach(item => {
+          item.classList.remove('active');
+          item.removeAttribute('aria-current');
+          
+          if (item.getAttribute('data-nav-section') === sectionId) {
+            item.classList.add('active');
+            item.setAttribute('aria-current', 'page');
           }
         });
       }
@@ -238,6 +275,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Inicialização
   toggleScrollTopButton();
   initAnimations();
+  setupMobileMenu();
   setupNavbarMobile();
   setupSmoothScroll();
   addRippleEffect();
@@ -245,6 +283,7 @@ document.addEventListener('DOMContentLoaded', function() {
   setupBoxEffects();
   setupParallax();
   setupCounters();
+  updateActiveNavLink();
   
   // Remover estado de loading após tudo carregar
   window.addEventListener('load', () => {
