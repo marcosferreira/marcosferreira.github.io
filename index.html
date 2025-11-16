@@ -8,102 +8,115 @@
 
   <title>Marcos Ferreira - Fullstack Developer</title>
 
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome para ícones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  
+  <!-- Primer CSS -->
+  <link href="https://unpkg.com/@primer/css@^21.0.0/dist/primer.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
   <link rel="shortcut icon" href="https://cdn.afterdawn.fi/v3/news/original/github-logo.png" type="image/x-icon">
   <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Marcos Ferreira</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="#home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#sobre">Sobre</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#portfolio">Portfólio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contato">Contato</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Header / Hero Section -->
-  <header id="home" class="bg-dark text-white text-center py-5">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-4 mb-4 mb-md-0">
-          <div class="profile rounded-circle overflow-hidden mx-auto" style="width: 200px; height: 200px; border: 3px solid white;">
-            <img src="https://github.com/marcosferreira.png" alt="Marcos Ferreira" class="img-fluid">
+  <header class="Header position-sticky top-0">
+    <div class="container-lg">
+      <!-- <div class="Header-item">
+        <a href="#" class="Header-link f4 d-flex flex-items-center">
+          <span class="text-bold">Marcos Ferreira</span>
+        </a>
+      </div> -->
+      <div class="Header-item">
+        <nav class="UnderlineNav">
+          <div class="UnderlineNav-body">
+            <a class="UnderlineNav-item" aria-current="page" href="#home">Home</a>
+            <a class="UnderlineNav-item" href="#sobre">Sobre</a>
+            <a class="UnderlineNav-item" href="#stats">Estatísticas</a>
+            <a class="UnderlineNav-item" href="#portfolio">Portfólio</a>
+            <a class="UnderlineNav-item" href="#contato">Contato</a>
           </div>
-        </div>
-        <div class="col-md-8 d-flex align-items-center">
-          <div class="text-md-start text-center">
-            <h1 class="display-4 fw-bold">Marcos Ferreira</h1>
-            <h3 class="lead fs-3 fw-light mb-4">Fullstack Developer</h3>
-            <div class="d-flex gap-3 justify-content-md-start justify-content-center">
-              <a href="https://github.com/marcosferreira" target="_blank" class="btn btn-outline-light">
-                <i class="fab fa-github me-2"></i>GitHub
-              </a>
-              <a href="cv.html" target="_blank" class="btn btn-primary">
-                <i class="fas fa-download me-2"></i>Download CV
-              </a>
-            </div>
-          </div>
-        </div>
+        </nav>
       </div>
     </div>
   </header>
 
+  <!-- Header / Hero Section -->
+  <div id="home" class="hero-section px-3 px-md-6">
+    <div class="container-lg">
+      <div class="d-flex flex-column flex-md-row flex-items-center flex-justify-center-md-spacious">
+        <div class="col-12 col-md-4 mb-4 mb-md-0 text-center">
+          <img src="https://github.com/marcosferreira.png" alt="Marcos Ferreira" class="circle border profile-image">
+        </div>
+        <div class="col-12 col-md-8 text-center">
+          <h1 class="h1-mktg mb-3">Marcos Ferreira</h1>
+          <p class="f3-light color-fg-muted mb-4">Desenvolvedor Fullstack</p>
+          <div class="d-flex flex-wrap flex-justify-center gap-2">
+            <a href="https://github.com/marcosferreira" target="_blank" class="btn"
+              aria-label="Visitar perfil no GitHub">
+              <i class="bi bi-github mr-2" aria-hidden="true"></i>GitHub
+            </a>
+            <a href="cv.html" target="_blank" class="btn btn-primary btn-ripple" aria-label="Visualizar currículo">
+              <i class="bi bi-eye mr-2" aria-hidden="true"></i>Visualizar CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Sobre Section -->
-  <section id="sobre" class="py-5 bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 mx-auto text-center">
-          <h2 class="mb-4">Sobre Mim</h2>
-          <p class="lead">Sou um desenvolvedor Fullstack com experiência em desenvolvimento web e aplicações mobile.</p>
-          <p>Graduado em Análise e Desenvolvimento de Sistemas pela UNOPAR, trabalho como desenvolvedor freelancer, desenvolvendo sites institucionais, aplicativos mobile e sistemas web utilizando diversas tecnologias.</p>
-          <div class="mt-4">
-            <h4 class="mb-3">Minhas Habilidades</h4>
-            <div class="d-flex flex-wrap justify-content-center gap-2">
-              <span class="badge bg-primary p-2">Python</span>
-              <span class="badge bg-primary p-2">Django</span>
-              <span class="badge bg-primary p-2">Flask</span>
-              <span class="badge bg-primary p-2">PHP</span>
-              <span class="badge bg-primary p-2">JavaScript</span>
-              <span class="badge bg-primary p-2">TypeScript</span>
-              <span class="badge bg-primary p-2">HTML</span>
-              <span class="badge bg-primary p-2">CSS</span>
-              <span class="badge bg-primary p-2">React</span>
-              <span class="badge bg-primary p-2">Node.js</span>
-              <span class="badge bg-primary p-2">Flutter</span>
-              <span class="badge bg-primary p-2">Dart</span>
-              <span class="badge bg-primary p-2">MongoDB</span>
-              <span class="badge bg-primary p-2">PostgreSQL</span>
-              <span class="badge bg-primary p-2">MySQL</span>
-              <span class="badge bg-primary p-2">Git</span>
-              <span class="badge bg-primary p-2">Docker</span>
-              <span class="badge bg-primary p-2">Linux</span>
-              <span class="badge bg-primary p-2">AWS</span>
-              <span class="badge bg-primary p-2">Azure</span>
-              <span class="badge bg-primary p-2">Firebase</span>
-            </div>
+  <section id="sobre" class="py-8 color-bg-subtle">
+    <div class="container-lg px-3 px-md-6">
+      <div class="col-lg-10 mx-auto">
+        <h2 class="h2-mktg mb-4 text-center">Sobre Mim</h2>
+        <p class="f3-light color-fg-muted mb-3 text-center">Sou um desenvolvedor Fullstack com experiência em
+          desenvolvimento web e aplicações mobile.</p>
+        <p class="f4 color-fg-muted mb-5 text-center">Graduado em Análise e Desenvolvimento de Sistemas pela UNOPAR,
+          trabalho como desenvolvedor freelancer, desenvolvendo sites institucionais, aplicativos mobile e sistemas web
+          utilizando diversas tecnologias.</p>
+        <div class="mt-12">
+          <h3 class="h3-mktg mb-4 text-center">Minhas Habilidades</h3>
+          <div class="d-flex flex-wrap flex-justify-center gap-2">
+            <span class="Label Label--accent" data-lang="Python">Python</span>
+            <span class="Label Label--accent" data-lang="Django">Django</span>
+            <span class="Label Label--accent" data-lang="Flask">Flask</span>
+            <span class="Label Label--accent" data-lang="PHP">PHP</span>
+            <span class="Label Label--accent" data-lang="JavaScript">JavaScript</span>
+            <span class="Label Label--accent" data-lang="TypeScript">TypeScript</span>
+            <span class="Label Label--accent" data-lang="HTML">HTML</span>
+            <span class="Label Label--accent" data-lang="CSS">CSS</span>
+            <span class="Label Label--accent" data-lang="React">React</span>
+            <span class="Label Label--accent" data-lang="Node.js">Node.js</span>
+            <span class="Label Label--accent" data-lang="Flutter">Flutter</span>
+            <span class="Label Label--accent" data-lang="Dart">Dart</span>
+            <span class="Label Label--accent" data-lang="MongoDB">MongoDB</span>
+            <span class="Label Label--accent" data-lang="PostgreSQL">PostgreSQL</span>
+            <span class="Label Label--accent" data-lang="MySQL">MySQL</span>
+            <span class="Label Label--accent" data-lang="Git">Git</span>
+            <span class="Label Label--accent" data-lang="Docker">Docker</span>
+            <span class="Label Label--accent" data-lang="Linux">Linux</span>
+            <span class="Label Label--accent" data-lang="AWS">AWS</span>
+            <span class="Label Label--accent" data-lang="Azure">Azure</span>
+            <span class="Label Label--accent" data-lang="Firebase">Firebase</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GitHub Stats Section -->
+  <section id="stats" class="py-8">
+    <div class="container-lg px-3 px-md-6">
+      <h2 class="h2-mktg text-center mb-5">Estatísticas do GitHub</h2>
+      <div class="d-flex flex-justify-center">
+        <div class="col-12 col-lg-10 mx-auto">
+          <div class="text-center">
+            <img
+              src="https://github-readme-stats.vercel.app/api?username=marcosferreira&show_icons=true&theme=transparent&hide_border=true&include_all_commits=true&count_private=true"
+              alt="GitHub Stats" class="width-50 stats-image">
+            <img
+              src="https://github-readme-stats.vercel.app/api/top-langs/?username=marcosferreira&layout=compact&theme=transparent&hide_border=true"
+              alt="Top Languages" class="width-50 stats-image">
           </div>
         </div>
       </div>
@@ -112,240 +125,247 @@
 
   <main>
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-5">
-      <div class="container">
-        <h2 class="text-center mb-5">Meu Portfólio</h2>
-        
-        <div class="row g-4">
+    <section id="portfolio" class="py-8 color-bg-subtle">
+      <div class="container-lg px-3 px-md-6 mb-5">
+        <h2 class="h2-mktg text-center">Meu Portfólio</h2>
+      </div>
+      <div class="container-lg px-3 px-md-6">
+        <div class="d-flex flex-wrap">
           <!-- Netflix Clone -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="Box height-full m-2 animate-on-scroll visible">
               <div class="position-relative">
-                <img src="assets/img/projects-img/netflix-clone.png" class="card-img-top" alt="Netflix Clone">
-                <div class="position-absolute bottom-0 w-100 py-3 px-3" style="background: rgba(0,0,0,0.7);">
-                  <h5 class="text-white m-0">Netflix Clone</h5>
+                <img src="assets/img/projects-img/netflix-clone.png" class="width-full project-image"
+                  alt="Netflix Clone">
+                <div class="position-absolute bottom-0 width-full p-3"
+                  style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                  <h3 class="h4 color-fg-on-emphasis m-0">Netflix Clone</h3>
                 </div>
               </div>
-              <div class="card-body d-flex flex-column justify-content-between">
-                <p class="card-text">Clone da interface do Netflix desenvolvido com tecnologias web modernas.</p>
-                <div class="d-flex gap-2 mt-3">
-                  <a href="https://marcosferreira.github.io/netflix-web" target="_blank" class="btn btn-primary flex-grow-1">
-                    <i class="fas fa-desktop me-2"></i>Demo
+              <div class="Box-body">
+                <p class="mb-3">Clone da interface do Netflix desenvolvido com tecnologias web modernas.</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <a href="https://marcosferreira.github.io/netflix-web" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary flex-1 btn-ripple" aria-label="Ver demonstração do Netflix Clone">
+                    <i class="bi bi-box-arrow-up-right mr-2" aria-hidden="true"></i>Demo
                   </a>
-                  <a href="https://github.com/marcosferreira/netflix-web" target="_blank" class="btn btn-outline-dark flex-grow-1">
-                    <i class="fab fa-github me-2"></i>Código
+                  <a href="https://github.com/marcosferreira/netflix-web" target="_blank" rel="noopener noreferrer"
+                    class="btn flex-1 btn-ripple" aria-label="Ver código no GitHub">
+                    <i class="bi bi-github mr-2" aria-hidden="true"></i>Código
                   </a>
                 </div>
               </div>
-              <div class="card-footer bg-white">
-                <div class="d-flex flex-wrap gap-1">
-                  <span class="badge bg-secondary">HTML</span>
-                  <span class="badge bg-secondary">CSS</span>
-                  <span class="badge bg-secondary">JavaScript</span>
+              <div class="Box-footer">
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="Label Label--accent" data-lang="HTML">HTML</span>
+                  <span class="Label Label--accent" data-lang="CSS">CSS</span>
+                  <span class="Label Label--accent" data-lang="JavaScript">JavaScript</span>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <!-- NNLanches -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="Box height-full m-2 animate-on-scroll visible">
               <div class="position-relative">
-                <img src="assets/img/projects-img/nnlanches-web.png" class="card-img-top" alt="NNLanches">
-                <div class="position-absolute bottom-0 w-100 py-3 px-3" style="background: rgba(0,0,0,0.7);">
-                  <h5 class="text-white m-0">NNLanches</h5>
+                <img src="assets/img/projects-img/nnlanches-web.png" class="width-full project-image" alt="NNLanches">
+                <div class="position-absolute bottom-0 width-full p-3"
+                  style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                  <h3 class="h4 color-fg-on-emphasis m-0">NNLanches</h3>
                 </div>
               </div>
-              <div class="card-body d-flex flex-column justify-content-between">
-                <p class="card-text">Sistema web para lanchonete com recursos de pedidos online.</p>
-                <div class="d-flex gap-2 mt-3">
-                  <a href="https://marcosferreira.github.io/nnlanches-web" target="_blank" class="btn btn-primary flex-grow-1">
-                    <i class="fas fa-desktop me-2"></i>Demo
+              <div class="Box-body">
+                <p class="mb-3">Sistema web para lanchonete com recursos de pedidos online.</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <a href="https://marcosferreira.github.io/nnlanches-web" target="_blank"
+                    class="btn btn-primary flex-1 btn-ripple">
+                    <i class="bi bi-box-arrow-up-right mr-2" aria-hidden="true"></i>Demo
                   </a>
-                  <a href="https://github.com/marcosferreira/nnlanches-web" target="_blank" class="btn btn-outline-dark flex-grow-1">
-                    <i class="fab fa-github me-2"></i>Código
+                  <a href="https://github.com/marcosferreira/nnlanches-web" target="_blank"
+                    class="btn flex-1 btn-ripple">
+                    <i class="bi bi-github mr-2" aria-hidden="true"></i>Código
                   </a>
                 </div>
               </div>
-              <div class="card-footer bg-white">
-                <div class="d-flex flex-wrap gap-1">
-                  <span class="badge bg-secondary">React</span>
-                  <span class="badge bg-secondary">Node.js</span>
-                  <span class="badge bg-secondary">MongoDB</span>
+              <div class="Box-footer">
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="Label Label--accent" data-lang="React">React</span>
+                  <span class="Label Label--accent" data-lang="Node.js">Node.js</span>
+                  <span class="Label Label--accent" data-lang="MongoDB">MongoDB</span>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <!-- Prefeitura de Dona Inês -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="Box height-full m-2 animate-on-scroll visible">
               <div class="position-relative">
-                <img src="assets/img/projects-img/site-pmdonaines.png" class="card-img-top" alt="Prefeitura de Dona Inês">
-                <div class="position-absolute bottom-0 w-100 py-3 px-3" style="background: rgba(0,0,0,0.7);">
-                  <h5 class="text-white m-0">Prefeitura de Dona Inês</h5>
+                <img src="assets/img/projects-img/site-pmdonaines.png" class="width-full project-image"
+                  alt="Prefeitura de Dona Inês">
+                <div class="position-absolute bottom-0 width-full p-3"
+                  style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                  <h3 class="h4 color-fg-on-emphasis m-0">Prefeitura de Dona Inês</h3>
                 </div>
               </div>
-              <div class="card-body d-flex flex-column justify-content-between">
-                <p class="card-text">Site institucional para a Prefeitura Municipal de Dona Inês (PB).</p>
-                <div class="d-flex gap-2 mt-3">
-                  <a href="http://pmdonaines.pb.gov.br" target="_blank" class="btn btn-primary flex-grow-1">
-                    <i class="fas fa-desktop me-2"></i>Demo
+              <div class="Box-body">
+                <p class="mb-3">Site institucional para a Prefeitura Municipal de Dona Inês (PB).</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <a href="http://pmdonaines.pb.gov.br" target="_blank" class="btn btn-primary flex-1 btn-ripple">
+                    <i class="bi bi-box-arrow-up-right mr-2" aria-hidden="true"></i>Demo
                   </a>
-                  <a href="#" target="_blank" class="btn btn-outline-dark flex-grow-1 disabled">
-                    <i class="fab fa-github me-2"></i>Privado
+                  <a href="#" class="btn flex-1 disabled btn-ripple" aria-disabled="true">
+                    <i class="bi bi-github mr-2" aria-hidden="true"></i>Privado
                   </a>
                 </div>
               </div>
-              <div class="card-footer bg-white">
-                <div class="d-flex flex-wrap gap-1">
-                  <span class="badge bg-secondary">WordPress</span>
-                  <span class="badge bg-secondary">PHP</span>
-                  <span class="badge bg-secondary">MySQL</span>
+              <div class="Box-footer">
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="Label Label--accent" data-lang="WordPress">WordPress</span>
+                  <span class="Label Label--accent" data-lang="PHP">PHP</span>
+                  <span class="Label Label--accent" data-lang="MySQL">MySQL</span>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <!-- Coegemas PB -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="Box height-full m-2 animate-on-scroll visible">
               <div class="position-relative">
-                <img src="assets/img/projects-img/site-coegemaspb.png" class="card-img-top" alt="Coegemas PB">
-                <div class="position-absolute bottom-0 w-100 py-3 px-3" style="background: rgba(0,0,0,0.7);">
-                  <h5 class="text-white m-0">Coegemas PB</h5>
+                <img src="assets/img/projects-img/site-coegemaspb.png" class="width-full project-image"
+                  alt="Coegemas PB">
+                <div class="position-absolute bottom-0 width-full p-3"
+                  style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                  <h3 class="h4 color-fg-on-emphasis m-0">Coegemas PB</h3>
                 </div>
               </div>
-              <div class="card-body d-flex flex-column justify-content-between">
-                <p class="card-text">Portal para o Colegiado Estadual de Gestores Municipais de Assistência Social da Paraíba.</p>
-                <div class="d-flex gap-2 mt-3">
-                  <a href="http://coegemaspb.com.br" target="_blank" class="btn btn-primary flex-grow-1">
-                    <i class="fas fa-desktop me-2"></i>Demo
+              <div class="Box-body">
+                <p class="mb-3">Portal para o Colegiado Estadual de Gestores Municipais de Assistência Social da
+                  Paraíba.</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <a href="http://coegemaspb.com.br" target="_blank" class="btn btn-primary flex-1 btn-ripple">
+                    <i class="bi bi-box-arrow-up-right mr-2" aria-hidden="true"></i>Demo
                   </a>
-                  <a href="#" target="_blank" class="btn btn-outline-dark flex-grow-1 disabled">
-                    <i class="fab fa-github me-2"></i>Privado
+                  <a href="#" class="btn flex-1 disabled btn-ripple" aria-disabled="true">
+                    <i class="bi bi-github mr-2" aria-hidden="true"></i>Privado
                   </a>
                 </div>
               </div>
-              <div class="card-footer bg-white">
-                <div class="d-flex flex-wrap gap-1">
-                  <span class="badge bg-secondary">WordPress</span>
-                  <span class="badge bg-secondary">PHP</span>
-                  <span class="badge bg-secondary">MySQL</span>
+              <div class="Box-footer">
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="Label Label--accent" data-lang="WordPress">WordPress</span>
+                  <span class="Label Label--accent" data-lang="PHP">PHP</span>
+                  <span class="Label Label--accent" data-lang="MySQL">MySQL</span>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <!-- Congesp -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm">
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="Box height-full m-2">
               <div class="position-relative">
-                <img src="assets/img/projects-img/site-congesp.png" class="card-img-top" alt="Congesp">
-                <div class="position-absolute bottom-0 w-100 py-3 px-3" style="background: rgba(0,0,0,0.7);">
-                  <h5 class="text-white m-0">Congesp</h5>
+                <img src="assets/img/projects-img/site-congesp.png" class="width-full project-image" alt="Congesp">
+                <div class="position-absolute bottom-0 width-full p-3"
+                  style="background: linear-gradient(transparent, rgba(0,0,0,0.8));">
+                  <h3 class="h4 color-fg-on-emphasis m-0">Congesp</h3>
                 </div>
               </div>
-              <div class="card-body d-flex flex-column justify-content-between">
-                <p class="card-text">Portal para o Congresso de Gestão Pública, com sistema de inscrições e certificados.</p>
-                <div class="d-flex gap-2 mt-3">
-                  <a href="https://congesp.com.br" target="_blank" class="btn btn-primary flex-grow-1">
-                    <i class="fas fa-desktop me-2"></i>Demo
+              <div class="Box-body">
+                <p class="mb-3">Portal para o Congresso de Gestão Pública, com sistema de inscrições e certificados.</p>
+                <div class="d-flex flex-wrap gap-2">
+                  <a href="https://congesp.com.br" target="_blank" class="btn btn-primary flex-1 btn-ripple">
+                    <i class="bi bi-box-arrow-up-right mr-2" aria-hidden="true"></i>Demo
                   </a>
-                  <a href="#" target="_blank" class="btn btn-outline-dark flex-grow-1 disabled">
-                    <i class="fab fa-github me-2"></i>Privado
+                  <a href="#" class="btn flex-1 disabled btn-ripple" aria-disabled="true">
+                    <i class="bi bi-github mr-2" aria-hidden="true"></i>Privado
                   </a>
                 </div>
               </div>
-              <div class="card-footer bg-white">
-                <div class="d-flex flex-wrap gap-1">
-                  <span class="badge bg-secondary">Django</span>
-                  <span class="badge bg-secondary">Python</span>
-                  <span class="badge bg-secondary">PostgreSQL</span>
-                  <span class="badge bg-secondary">Docker</span>
+              <div class="Box-footer">
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="Label Label--accent" data-lang="Django">Django</span>
+                  <span class="Label Label--accent" data-lang="Python">Python</span>
+                  <span class="Label Label--accent" data-lang="PostgreSQL">PostgreSQL</span>
+                  <span class="Label Label--accent" data-lang="Docker">Docker</span>
                 </div>
               </div>
             </div>
           </div>
-          
+
           <!-- Novo Projeto Card -->
-          <div class="col-md-6 col-lg-4">
-            <div class="card h-100 shadow-sm border-dashed" style="border-style: dashed; border-width: 2px;">
-              <div class="card-body d-flex flex-column align-items-center justify-content-center text-center p-5">
-                <i class="fas fa-plus-circle display-1 text-muted mb-3"></i>
-                <h5>Você tem um projeto em mente?</h5>
-                <p class="mb-3">Vamos transformar sua ideia em realidade</p>
-                <a href="#contato" class="btn btn-outline-primary mt-2">Entre em contato</a>
-              </div>
+          <div class="col-12 col-md-6 col-lg-4 mb-4">
+            <div class="Box height-full m-2 border-dashed text-center p-5"
+              style="border-style: dashed; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <i class="bi bi-plus-circle color-fg-muted mb-3" style="font-size: 4rem;"></i>
+              <h3 class="h4 mb-2">Você tem um projeto em mente?</h3>
+              <p class="mb-3">Vamos transformar sua ideia em realidade</p>
+              <a href="#contato" class="btn btn-primary mt-2 btn-ripple">Entre em contato</a>
             </div>
           </div>
         </div>
-      </div>
     </section>
-    
+
     <!-- Contato Section -->
-    <section id="contato" class="py-5 bg-light">
-      <div class="container">
-        <h2 class="text-center mb-5">Entre em Contato</h2>
-        
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="card shadow-sm">
-              <div class="card-body p-4">
-                <form id="whatsappForm" onsubmit="return sendWhatsApp(event)">
-                  <div class="row g-3">
-                    <div class="col-md-6">
-                      <label for="nome" class="form-label">Nome</label>
-                      <input type="text" class="form-control" id="nome" required>
-                    </div>
-                    <div class="col-md-6">
-                      <label for="email" class="form-label">E-mail</label>
-                      <input type="email" class="form-control" id="email" required>
-                    </div>
-                    <div class="col-12">
-                      <label for="assunto" class="form-label">Assunto</label>
-                      <input type="text" class="form-control" id="assunto" required>
-                    </div>
-                    <div class="col-12">
-                      <label for="mensagem" class="form-label">Mensagem</label>
-                      <textarea class="form-control" id="mensagem" rows="4" required></textarea>
-                    </div>
-                    <div class="col-12 mt-4">
-                      <button type="submit" class="btn btn-primary w-100">
-                        <i class="fab fa-whatsapp me-2"></i>Enviar via WhatsApp
-                      </button>
-                    </div>
+    <section id="contato" class="py-6">
+      <div class="container-lg px-3 px-md-6">
+        <h2 class="h2-mktg text-center mb-5">Entre em Contato</h2>
+
+        <div class="d-flex flex-justify-center">
+          <div class="col-12 col-lg-8">
+            <div class="Box p-4">
+              <form id="whatsappForm" onsubmit="return sendWhatsApp(event)">
+                <div class="d-flex flex-wrap gutter">
+                  <div class="col-12 col-md-6 mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" required>
                   </div>
-                </form>
-              </div>
+                  <div class="col-12 col-md-6 mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" required>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label for="assunto" class="form-label">Assunto</label>
+                    <input type="text" class="form-control" id="assunto" required>
+                  </div>
+                  <div class="col-12 mb-3">
+                    <label for="mensagem" class="form-label">Mensagem</label>
+                    <textarea class="form-control" id="mensagem" rows="4" required></textarea>
+                  </div>
+                  <div class="col-12 mt-3">
+                    <button type="submit" class="btn btn-primary width-full">
+                      <i class="bi bi-whatsapp mr-2"></i>Enviar via WhatsApp
+                    </button>
+                  </div>
+                </div>
+              </form>
             </div>
-            
-            <div class="row mt-4 g-3 text-center">
-              <div class="col-md-4">
-                <div class="card h-100 shadow-sm py-4">
-                  <div class="card-body">
-                    <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
-                    <h5>E-mail</h5>
-                    <p class="mb-0"><a href="mailto:marcosferreira.contato@gmail.com" class="text-decoration-none">marcosferreira.contato@gmail.com</a></p>
-                  </div>
+
+            <div class="d-flex flex-wrap mt-4 text-center">
+              <div class="col-12 col-md-4 mb-3">
+                <div class="Box height-full m-2 p-4">
+                  <i class="bi bi-envelope color-fg-accent mb-3" style="font-size: 2rem;"></i>
+                  <h3 class="h5 mb-2">E-mail</h3>
+                  <p class="f6 mb-0"><a href="mailto:marcosferreira.contato@gmail.com"
+                      class="Link--primary">marcosferreira.contato@gmail.com</a></p>
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="card h-100 shadow-sm py-4">
-                  <div class="card-body">
-                    <i class="fas fa-phone fa-2x text-primary mb-3"></i>
-                    <h5>Telefone</h5>
-                    <p class="mb-0"><a href="tel:+5583981074503" class="text-decoration-none">(83) 98107-4503</a></p>
-                  </div>
+              <div class="col-12 col-md-4 mb-3">
+                <div class="Box height-full m-2 p-4">
+                  <i class="bi bi-telephone color-fg-accent mb-3" style="font-size: 2rem;"></i>
+                  <h3 class="h5 mb-2">Telefone</h3>
+                  <p class="f6 mb-0">
+                    <a href="https://wa.me/5583981074503?text=Olá!%20Gostaria%20de%20conversar%20sobre%20um%20projeto." class="Link--primary" target="_blank" rel="noopener noreferrer">(83) 98107-4503</a>
+                  </p>
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="card h-100 shadow-sm py-4">
-                  <div class="card-body">
-                    <i class="fas fa-map-marker-alt fa-2x text-primary mb-3"></i>
-                    <h5>Localização</h5>
-                    <p class="mb-0">João Pessoa, PB - Brasil</p>
-                  </div>
+              <div class="col-12 col-md-4 mb-3">
+                <div class="Box height-full m-2 p-4">
+                  <i class="bi bi-geo-alt color-fg-accent mb-3" style="font-size: 2rem;"></i>
+                  <h3 class="h5 mb-2">Localização</h3>
+                  <p class="f6 mb-0 color-fg-muted">João Pessoa, PB - Brasil</p>
                 </div>
               </div>
             </div>
@@ -356,51 +376,53 @@
   </main>
 
   <!-- Botão Voltar ao Topo -->
-  <a href="#home" class="scroll-top" id="scrollTop">
-    <i class="fas fa-arrow-up"></i>
+  <a href="#home" class="scroll-top position-fixed bottom-0 right-0 m-4" id="scrollTop">
+    <button class="btn btn-primary circle" style="width: 48px; height: 48px;">
+      <i class="bi bi-arrow-up"></i>
+    </button>
   </a>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white py-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 mb-4 mb-md-0">
-          <h5 class="mb-3">Marcos Ferreira</h5>
-          <p class="mb-3">Fullstack Developer apaixonado por criar soluções digitais inovadoras e funcionais.</p>
+  <footer class="footer color-bg-default border-top py-5">
+    <div class="container-lg px-3 px-md-6">
+      <div class="d-flex flex-wrap flex-justify-between">
+        <div class="col-12 col-md-6 mb-4 mb-md-0">
+          <h3 class="h4 mb-3">Marcos Ferreira</h3>
+          <p class="f5 color-fg-muted mb-3">Fullstack Developer apaixonado por criar soluções digitais inovadoras e
+            funcionais.</p>
           <div class="d-flex gap-3">
-            <a href="https://github.com/marcosferreira" target="_blank" class="text-white">
-              <i class="fab fa-github fa-lg"></i>
+            <a href="https://github.com/marcosferreira" target="_blank" class="color-fg-muted" aria-label="GitHub">
+              <i class="bi bi-github" style="font-size: 1.5rem;"></i>
             </a>
-            <a href="https://www.linkedin.com/in/marcosferreira-dev/" target="_blank" class="text-white">
-              <i class="fab fa-linkedin fa-lg"></i>
+            <a href="https://www.linkedin.com/in/marcosferreira-dev/" target="_blank" class="color-fg-muted"
+              aria-label="LinkedIn">
+              <i class="bi bi-linkedin" style="font-size: 1.5rem;"></i>
             </a>
-            <a href="https://x.com/marcosdev_" target="_blank" class="text-white">
-              <i class="fab fa-twitter fa-lg"></i>
+            <a href="https://x.com/marcosdev_" target="_blank" class="color-fg-muted" aria-label="Twitter">
+              <i class="bi bi-twitter-x" style="font-size: 1.5rem;"></i>
             </a>
-            <a href="https://www.instagram.com/marcosferreira.dev/" target="_blank" class="text-white">
-              <i class="fab fa-instagram fa-lg"></i>
+            <a href="https://www.instagram.com/marcosferreira.dev/" target="_blank" class="color-fg-muted"
+              aria-label="Instagram">
+              <i class="bi bi-instagram" style="font-size: 1.5rem;"></i>
             </a>
           </div>
         </div>
-        <div class="col-md-6 text-md-end">
-          <h5 class="mb-3">Links Rápidos</h5>
-          <ul class="list-unstyled">
-            <li><a href="#home" class="text-white text-decoration-none">Home</a></li>
-            <li><a href="#sobre" class="text-white text-decoration-none">Sobre</a></li>
-            <li><a href="#portfolio" class="text-white text-decoration-none">Portfólio</a></li>
-            <li><a href="#contato" class="text-white text-decoration-none">Contato</a></li>
-          </ul>
+        <div class="col-12 col-md-6 text-md-right">
+          <h3 class="h4 mb-3">Links Rápidos</h3>
+          <nav>
+            <a href="#home" class="d-block Link--secondary mb-2">Home</a>
+            <a href="#sobre" class="d-block Link--secondary mb-2">Sobre</a>
+            <a href="#portfolio" class="d-block Link--secondary mb-2">Portfólio</a>
+            <a href="#contato" class="d-block Link--secondary mb-2">Contato</a>
+          </nav>
         </div>
       </div>
-      <hr>
-      <div class="text-center">
-        <p class="mb-0">&copy; 2025 Marcos Ferreira. Todos os direitos reservados.</p>
+      <div class="border-top mt-5 pt-4 text-center">
+        <p class="f6 color-fg-muted mb-0">&copy; 2025 Marcos Ferreira. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
 
-  <!-- Bootstrap JS Bundle com Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- JavaScript personalizado -->
   <script src="./assets/js/main.js"></script>
 </body>

@@ -1,14 +1,14 @@
 /**
- * Arquivo JavaScript principal do portfolio
+ * Arquivo JavaScript principal do portfolio - Primer Design System
  * Implementa animações modernas e interatividade
  */
 
 document.addEventListener('DOMContentLoaded', function() {
   // Elementos da UI
   const scrollTopBtn = document.getElementById('scrollTop');
-  const animateElements = document.querySelectorAll('section, .card');
-  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-  const navbar = document.querySelector('.navbar');
+  const animateElements = document.querySelectorAll('section, .Box');
+  const navLinks = document.querySelectorAll('.UnderlineNav-item');
+  const header = document.querySelector('.Header');
   
   // Contador de animação para delays escalonados
   let animationDelay = 0;
@@ -22,14 +22,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // Efeito de navbar ao rolar
-  function handleNavbarScroll() {
+  // Efeito de header ao rolar
+  function handleHeaderScroll() {
     if (window.scrollY > 50) {
-      navbar.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.3)';
-      navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+      if (header) {
+        header.style.boxShadow = '0 8px 16px rgba(140, 149, 159, 0.15)';
+      }
     } else {
-      navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
-      navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+      if (header) {
+        header.style.boxShadow = '0 1px 0 rgba(27, 31, 36, 0.04)';
+      }
     }
   }
 
@@ -42,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
       
       // Verificar se o elemento está visível na tela
       if (elementTop < windowHeight - 100 && elementBottom > 0) {
-        // Adicionar delay escalonado para cards dentro de uma seção
-        if (el.classList.contains('card')) {
+        // Adicionar delay escalonado para boxes dentro de uma seção
+        if (el.classList.contains('Box')) {
           setTimeout(() => {
             el.classList.add('animate-on-scroll', 'visible');
           }, index * 50);
@@ -65,9 +67,9 @@ document.addEventListener('DOMContentLoaded', function() {
       
       if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
         navLinks.forEach(link => {
-          link.classList.remove('active');
+          link.removeAttribute('aria-current');
           if (link.getAttribute('href') === '#' + sectionId) {
-            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
           }
         });
       }
@@ -107,17 +109,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Fechar navbar mobile ao clicar em link
+  // Fechar navbar mobile ao clicar em link (não necessário com Primer, mas mantemos para compatibilidade)
   function setupNavbarMobile() {
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
-        const navbarCollapse = document.querySelector('.navbar-collapse');
-        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
-          const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-          if (bsCollapse) {
-            bsCollapse.hide();
-          }
-        }
+        // Primer não usa collapse, então não precisamos fazer nada aqui
       });
     });
   }
@@ -158,46 +154,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Adicionar efeito de hover nas imagens dos cards
-  function setupCardEffects() {
-    const cards = document.querySelectorAll('.card');
-    
-    cards.forEach(card => {
-      const cardImg = card.querySelector('.card-img-top');
-      
-      if (cardImg) {
-        // Efeito de movimento da imagem seguindo o mouse
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          
-          const moveX = (x - centerX) / 20;
-          const moveY = (y - centerY) / 20;
-          
-          cardImg.style.transform = `scale(1.15) translate(${moveX}px, ${moveY}px)`;
-        });
-        
-        card.addEventListener('mouseleave', () => {
-          cardImg.style.transform = '';
-        });
-      }
-    });
+  // Adicionar efeito de hover nas imagens dos boxes (removido para evitar overflow)
+  function setupBoxEffects() {
+    // Efeito de hover simples já é gerenciado pelo CSS
+    // Removido o efeito de movimento seguindo o mouse para melhor UX
   }
 
-  // Parallax effect para header
+  // Parallax effect para hero section
   function setupParallax() {
-    const header = document.querySelector('header');
+    const heroSection = document.querySelector('.hero-section');
     
-    if (header) {
+    if (heroSection) {
       window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
         if (scrolled < window.innerHeight) {
-          header.style.transform = `translateY(${scrolled * 0.5}px)`;
-          header.style.opacity = 1 - (scrolled / 600);
+          heroSection.style.transform = `translateY(${scrolled * 0.5}px)`;
+          heroSection.style.opacity = 1 - (scrolled / 600);
         }
       });
     }
@@ -253,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let scrollTimeout;
   window.addEventListener('scroll', () => {
     toggleScrollTopButton();
-    handleNavbarScroll();
+    handleHeaderScroll();
     updateActiveNavLink();
     
     // Debounce para animações
@@ -270,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
   setupSmoothScroll();
   addRippleEffect();
   setupLazyLoading();
-  setupCardEffects();
+  setupBoxEffects();
   setupParallax();
   setupCounters();
   
@@ -280,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
   
   // Log de inicialização (apenas para desenvolvimento)
-  console.log('🚀 Portfolio carregado com sucesso!');
+  console.log('🚀 Portfolio com Primer CSS carregado com sucesso!');
 });
 
 /**
