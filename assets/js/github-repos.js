@@ -7,12 +7,14 @@ class GitHubReposLoader {
   constructor(username, containerId, options = {}) {
     this.username = username;
     this.container = document.getElementById(containerId);
+    this.containerId = containerId;
     this.options = {
       exclude: options.exclude || [], // Repos para excluir
       maxRepos: options.maxRepos || 6,
-      sortBy: options.sortBy || 'created', // 'updated', 'stars', 'created'
+      sortBy: options.sortBy || 'updated', // 'updated', 'stars', 'created'
       showForks: options.showForks || false,
       includeOrgs: options.includeOrgs !== undefined ? options.includeOrgs : true,
+      requireDescription: options.requireDescription !== undefined ? options.requireDescription : false,
       ...options
     };
   }
@@ -102,8 +104,8 @@ class GitHubReposLoader {
         return false;
       }
       
-      // Apenas com descrição
-      if (!repo.description) {
+      // Exigir descrição opcional
+      if (this.options.requireDescription && !repo.description) {
         console.log(`🚫 Excluído (sem descrição): ${repo.name}`);
         return false;
       }
@@ -112,9 +114,17 @@ class GitHubReposLoader {
       return true;
     });
 
-    // Ordenar por data de criação (mais recentes primeiro)
+    // Ordenar conforme a opção `sortBy`
     const sorted = filtered.sort((a, b) => {
-      return new Date(b.created_at) - new Date(a.created_at);
+      switch (this.options.sortBy) {
+        case 'updated':
+          return new Date(b.updated_at) - new Date(a.updated_at);
+        case 'stars':
+          return (b.stargazers_count || 0) - (a.stargazers_count || 0);
+        case 'created':
+        default:
+          return new Date(b.created_at) - new Date(a.created_at);
+      }
     });
 
     return sorted.slice(0, this.options.maxRepos);
@@ -295,7 +305,7 @@ document.addEventListener('DOMContentLoaded', () => {
       'nnlanches-web' // Já está nos projetos destacados
     ],
     maxRepos: 6,
-    sortBy: 'created', // Ordenar por data de criação
+    sortBy: 'updated', // Ordenar por data de criação
     showForks: false,
     includeOrgs: true // Incluir repositórios de organizações
   });
